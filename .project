@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>MCLMShared</name>
+	<comment></comment>
+	<projects>
+		<project>MCLMProject</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.xtuml.bp.core.xtumlnature</nature>
+	</natures>
+</projectDescription>

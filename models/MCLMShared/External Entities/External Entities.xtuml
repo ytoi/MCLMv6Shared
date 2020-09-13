@@ -1,0 +1,1192 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("bf23e41b-141d-42e7-955b-dfe032de576f",
+	"f0f2e51c-0dd6-48e9-8bde-ae1acca1380a",
+	"f0f2e51c-0dd6-48e9-8bde-ae1acca1380a",
+	'External Entities',
+	'',
+	0);
+INSERT INTO S_EE
+	VALUES ("34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'EV3Body',
+	'',
+	'EV3B',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3Body',
+	0);
+INSERT INTO S_BRG
+	VALUES ("eab81f99-dfcd-4fc6-b314-cd0bd1eff33c",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'get_battery_voltage',
+	'バッテリの電圧を取得する
+
+返り値
+integer
+単位はmV
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 20;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("6a6f5d02-9220-4297-a338-cd529d100ff1",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'get_battery_current',
+	'バッテリの電流を取得する
+
+返り値
+integer
+単位はmA
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 10;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("2c4d17c0-6abb-4524-9620-8f6aba512b07",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'is_button_pressed',
+	'本体ボタンの取得
+
+返り値
+boolean
+true:押された
+false:押されていない
+
+引数
+button : 
+EV3Button::LEFT_BUTTON
+EV3Button::RIGHT_BUTTON
+EV3Button::UP_BUTTON
+EV3Button::ENTER_BUTTON
+EV3Button::BACK_BUTTON',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'return true;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("fa9fe343-1c2f-482f-9569-bad4f08d3ba6",
+	"2c4d17c0-6abb-4524-9620-8f6aba512b07",
+	'button',
+	"5d16a10b-7014-41e9-a6b6-d6c2abca1f4b",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5d16a10b-7014-41e9-a6b6-d6c2abca1f4b",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Button',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("854504dc-1e83-4ad4-b26d-fe6b25f9be27",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'led_set_color',
+	'LEDライトON
+
+返り値なし
+
+引数
+color
+EV3LcdColor::OFF
+EV3LcdColor::RED
+EV3LcdColor::GREEN
+EV3LcdColor::ORANGE',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("8729ff51-4f80-4dda-8e55-122575387f3d",
+	"854504dc-1e83-4ad4-b26d-fe6b25f9be27",
+	'color',
+	"97376c1a-ed66-4ab0-80f5-ac227db84bfa",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("97376c1a-ed66-4ab0-80f5-ac227db84bfa",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3LedColor',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("141d253e-1c1b-4a03-8269-814342ba784f",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'speaker_play_file',
+	'LEDライトON
+
+返り値なし
+
+引数
+file:ファイル名文字列
+duraration: integer
+   音楽の持続時間。mSec。-1を入れると最後まで流す
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	';
+',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("1cd5c0a6-5859-4ea9-8bbd-518f16c7d246",
+	"141d253e-1c1b-4a03-8269-814342ba784f",
+	'file',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'ファイル名文字列');
+INSERT INTO S_BPARM
+	VALUES ("c5ed7fd7-06e2-4543-a6e9-91adb7f34158",
+	"141d253e-1c1b-4a03-8269-814342ba784f",
+	'duration',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1cd5c0a6-5859-4ea9-8bbd-518f16c7d246",
+	'音楽の持続時間。mSec。-1を入れると最後まで流す');
+INSERT INTO S_BRG
+	VALUES ("d4362b42-31f4-48b2-96b8-87fc96a91876",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'speaker_play_tone',
+	'トーン出力
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("67f0d9e2-3703-4ff8-bce6-cd6e0094cbd8",
+	"d4362b42-31f4-48b2-96b8-87fc96a91876",
+	'frequency',
+	"b292d053-5041-4387-a16f-1745c15db824",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'音の周波数。
+入れる値はEV3HRP2の仕様書を参照の事
+');
+INSERT INTO S_DT_PROXY
+	VALUES ("b292d053-5041-4387-a16f-1745c15db824",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Tone',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BPARM
+	VALUES ("fa025f20-b3dd-420b-8e04-d8d970533ab8",
+	"d4362b42-31f4-48b2-96b8-87fc96a91876",
+	'duration',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"67f0d9e2-3703-4ff8-bce6-cd6e0094cbd8",
+	'持続時間。msec。-1を入れると停止
+');
+INSERT INTO S_BRG
+	VALUES ("d3f0d4cd-11a2-467b-9935-dd9961ac23ba",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'speaker_set_volume',
+	'ボリュームの設定
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("d0aadd6e-3a61-4a3b-a1ca-7aca8a6db0ce",
+	"d3f0d4cd-11a2-467b-9935-dd9961ac23ba",
+	'volume',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'Volume値。0～100。');
+INSERT INTO S_BRG
+	VALUES ("1c2215c9-ef5f-4030-adc5-862944dbf448",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'speaker_stop',
+	'サウンドの停止
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("ee953994-ff7f-4f00-bf0e-452cc088e2ea",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'bluetooth_is_connected',
+	'bluetooth接続確認
+
+返り値
+boolean
+true:接続済み
+false:接続切れ
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'return true;
+',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("058fef14-dff1-43dc-adf4-87ca2716037d",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'image_load',
+	'メモリファイルから画像をロードする
+メモリファイルはBridge内で一つだけ確保され、すでにある場合には解放してから表示を行う
+
+返り値
+EV3Result::OK
+正常終了
+EV3Result::ERROR
+エラー',
+	0,
+	"6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	'return EV3Result::OK;
+',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("24c74d48-e8d8-44eb-b0dc-32e263a3d6d4",
+	"058fef14-dff1-43dc-adf4-87ca2716037d",
+	'filename',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Result',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("c893ae5c-b86b-4c35-8d8e-5ec299d4f1e1",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'draw_image',
+	'指定座標で画像を表示する
+image_loadを含めて画像は同時に一つのみ表示となる。
+
+返り値
+Ev3Result型
+Result::OK
+正常終了
+Result::ERROR
+エラー
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("5264ed26-7922-4d17-b27f-96730f868659",
+	"c893ae5c-b86b-4c35-8d8e-5ec299d4f1e1",
+	'filename',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'ファイル名');
+INSERT INTO S_BPARM
+	VALUES ("efb23ad5-4af4-4c5d-a4ee-7aa6eb7942e7",
+	"c893ae5c-b86b-4c35-8d8e-5ec299d4f1e1",
+	'x',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5264ed26-7922-4d17-b27f-96730f868659",
+	'x座標
+');
+INSERT INTO S_BPARM
+	VALUES ("60ff8dc4-48d9-469c-abd0-927a8c0621d8",
+	"c893ae5c-b86b-4c35-8d8e-5ec299d4f1e1",
+	'y',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"efb23ad5-4af4-4c5d-a4ee-7aa6eb7942e7",
+	'y座標');
+INSERT INTO S_BRG
+	VALUES ("77192c96-28b7-4a8b-8041-df967587ba77",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'lcd_draw_line',
+	'指定座標で線を引く',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("ac0057e5-a9c1-44d3-9dbd-74316345bb04",
+	"77192c96-28b7-4a8b-8041-df967587ba77",
+	'x0',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'開始点のx座標');
+INSERT INTO S_BPARM
+	VALUES ("7d4e0f04-3f9c-4302-adb5-c259595888a5",
+	"77192c96-28b7-4a8b-8041-df967587ba77",
+	'y0',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"ac0057e5-a9c1-44d3-9dbd-74316345bb04",
+	'開始点のy座標
+');
+INSERT INTO S_BPARM
+	VALUES ("1d7dc6a0-a4b1-4a75-9320-e02a523f965d",
+	"77192c96-28b7-4a8b-8041-df967587ba77",
+	'x1',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"7d4e0f04-3f9c-4302-adb5-c259595888a5",
+	'終了点のx座標');
+INSERT INTO S_BPARM
+	VALUES ("4a3c08c7-62b5-41eb-80ee-069f80b6b9bf",
+	"77192c96-28b7-4a8b-8041-df967587ba77",
+	'y1',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"1d7dc6a0-a4b1-4a75-9320-e02a523f965d",
+	'終了点のy座標');
+INSERT INTO S_BRG
+	VALUES ("2865ec67-66af-4bd4-865e-b4df73eaa33a",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'lcd_draw_string',
+	'指定位置で文字列を書く',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("0f09ebc7-ff0c-489c-b278-e7b4e3234103",
+	"2865ec67-66af-4bd4-865e-b4df73eaa33a",
+	'string',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'表示する文字列
+');
+INSERT INTO S_BPARM
+	VALUES ("636ee53a-6b62-4022-a00e-5a5374053f68",
+	"2865ec67-66af-4bd4-865e-b4df73eaa33a",
+	'x',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0f09ebc7-ff0c-489c-b278-e7b4e3234103",
+	'文字列を表示する左上のx座標');
+INSERT INTO S_BPARM
+	VALUES ("76d1589e-61db-429b-abaa-9501ccff40d4",
+	"2865ec67-66af-4bd4-865e-b4df73eaa33a",
+	'y',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"636ee53a-6b62-4022-a00e-5a5374053f68",
+	'文字列を表示する左上のy座標');
+INSERT INTO S_BRG
+	VALUES ("8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'lcd_fill_rect',
+	'矩形を描いて色を塗る
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("8cb60f11-0c98-458c-933e-759e32d548a7",
+	"8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	'x',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'矩形の左上のx座標');
+INSERT INTO S_BPARM
+	VALUES ("209f7242-0aa7-46f6-8a0e-82f1a957aeac",
+	"8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	'y',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8cb60f11-0c98-458c-933e-759e32d548a7",
+	'矩形の左上のy座標');
+INSERT INTO S_BPARM
+	VALUES ("4e49bc94-e423-4352-acf2-15f07ca87c84",
+	"8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	'w',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"209f7242-0aa7-46f6-8a0e-82f1a957aeac",
+	'矩形の幅
+');
+INSERT INTO S_BPARM
+	VALUES ("63d52cbb-f300-4826-8e1e-9f5e20271e8e",
+	"8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	'h',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4e49bc94-e423-4352-acf2-15f07ca87c84",
+	'矩形の高さ');
+INSERT INTO S_BPARM
+	VALUES ("2c6a1d94-0e1e-4c7e-bb8a-dbe381f4279a",
+	"8c579a4b-c3a6-41d2-bbaf-19c1545913b5",
+	'color',
+	"ba874765-6ebb-4b2d-861c-8887de6b80bc",
+	0,
+	'',
+	"63d52cbb-f300-4826-8e1e-9f5e20271e8e",
+	'塗りつぶす色を指定する');
+INSERT INTO S_DT_PROXY
+	VALUES ("ba874765-6ebb-4b2d-861c-8887de6b80bc",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3LcdColor',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("95dfff30-0eb6-4ec1-be6c-dbf03ef36b4b",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'lcd_set_font',
+	'デフォルトのフォントを設定する',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("b48877c4-d551-42f9-b74e-b61b892b82cd",
+	"95dfff30-0eb6-4ec1-be6c-dbf03ef36b4b",
+	'font',
+	"886c5101-6abb-4919-a52c-7e3ca48eae51",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'デフォルトのフォントを設定する');
+INSERT INTO S_DT_PROXY
+	VALUES ("886c5101-6abb-4919-a52c-7e3ca48eae51",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Font',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("64e82a88-3d81-4a2d-923d-93d79b54dce0",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("5588005b-5e97-44ac-bc89-369afa8fe118",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'int_to_str',
+	'',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'return "";',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("dcc70589-b3c3-44b6-a3ed-325301de4278",
+	"5588005b-5e97-44ac-bc89-369afa8fe118",
+	'integer',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BRG
+	VALUES ("fa03ff64-5cfa-4c01-9653-8b18fb18176b",
+	"34899ab1-185d-4ccc-970c-4ff852ec0514",
+	'bluetooth_write',
+	'',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("11056ac9-d5be-4673-b86d-59519944a542",
+	"fa03ff64-5cfa-4c01-9653-8b18fb18176b",
+	'string',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("34899ab1-185d-4ccc-970c-4ff852ec0514",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'EV3Motor',
+	'',
+	'EV3M',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3Motor',
+	0);
+INSERT INTO S_BRG
+	VALUES ("be13a3a3-84f4-41ec-98c3-dc3e3aa8c614",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'get_count',
+	'モーターの角位置を取得する
+
+返り値
+integer
+モーターの角位置（度)。マイナスは逆方向
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 30;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("c2af9ec9-40cb-44f1-8e15-749621aecd99",
+	"be13a3a3-84f4-41ec-98c3-dc3e3aa8c614",
+	'motor',
+	"f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'motor:
+EV3Motor::LEFT 左モーター
+EV3Motor::RIGHT 右モーター
+EV3Motor::TAIL しっぽモーター
+EV3Motor::FRONT 前モーター
+EV3Motor::USER1 任意用途用1
+EV3Motor::USER2 任意用途用2
+
+');
+INSERT INTO S_DT_PROXY
+	VALUES ("f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Motor',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("1be74e1d-02ba-47cf-9a7a-05176db9c7a4",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'reset_count',
+	'モーターの角位置をリセットする',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("fb7485f2-f9a5-427a-afbf-04f193f26dea",
+	"1be74e1d-02ba-47cf-9a7a-05176db9c7a4",
+	'motor',
+	"f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'motor:
+EV3Motor::LEFT 左モーター
+EV3Motor::RIGHT 右モーター
+EV3Motor::TAIL しっぽモーター
+EV3Motor::FRONT 前モーター
+EV3Motor::USER1 任意用途用1
+EV3Motor::USER2 任意用途用2');
+INSERT INTO S_BRG
+	VALUES ("1a9b4717-f2a4-4811-838f-6fedaae14dc1",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'set_power',
+	'モーターのパワーを設定する
+
+返り値
+EV3Result型
+EV3Result::OK
+正常終了
+EV3Result::Error
+エラー（抜けなど）',
+	0,
+	"6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	'return EV3Result::OK;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("4ae792cb-c729-4111-b228-907ee1811253",
+	"1a9b4717-f2a4-4811-838f-6fedaae14dc1",
+	'motor',
+	"f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Motor::LEFT 左モーター
+EV3Motor::RIGHT 右モーター
+EV3Motor::TAIL しっぽモーター
+EV3Motor::FRONT 前モーター
+EV3Motor::USER1 任意用途用1
+EV3Motor::USER2 任意用途用2');
+INSERT INTO S_BPARM
+	VALUES ("7ca055e3-9ff5-4ec5-879d-ca5f7631abb7",
+	"1a9b4717-f2a4-4811-838f-6fedaae14dc1",
+	'power',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4ae792cb-c729-4111-b228-907ee1811253",
+	'モーターのパワー。-100～100を指定。マイナスの値は逆方向の回転となる');
+INSERT INTO S_BRG
+	VALUES ("27174243-fbcc-4e7e-bb44-c295625db987",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'get_power',
+	'モーターのパワーを取得する
+
+返り値
+integer:モーターのパワー
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 20;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("f4002b46-ca90-4686-abd3-d95a7791c9fe",
+	"27174243-fbcc-4e7e-bb44-c295625db987",
+	'motor',
+	"f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Motor::LEFT 左モーター
+EV3Motor::RIGHT 右モーター
+EV3Motor::TAIL しっぽモーター
+EV3Motor::FRONT 前モーター
+EV3Motor::USER1 任意用途用1
+EV3Motor::USER2 任意用途用2');
+INSERT INTO S_BRG
+	VALUES ("815d4de3-053a-4a88-b529-c93a0ec38962",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'stop',
+	'モーターを停止する
+
+EV3Result::OK
+正常終了
+EV3Result::Error
+エラー',
+	0,
+	"6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	'return EV3Result::OK;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("481d7162-4d89-406a-8ecd-d2424859f029",
+	"815d4de3-053a-4a88-b529-c93a0ec38962",
+	'motor',
+	"f4f8a26f-d59a-4cc5-8243-e70d3822475f",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Motor型のモーター種別を指定する。');
+INSERT INTO S_BPARM
+	VALUES ("295351d9-1267-42c4-bad0-84be50e6cfb6",
+	"815d4de3-053a-4a88-b529-c93a0ec38962",
+	'brake',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"481d7162-4d89-406a-8ecd-d2424859f029",
+	'停止時のブレーキ指定。
+true:ブレーキモード
+false : 解放モード');
+INSERT INTO S_BRG
+	VALUES ("c3de0887-f75d-465e-a11c-5b6a744ec81e",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'steer',
+	'２つのモーターでロボットのステアリング操作を行う
+
+返り値
+EV3Result型
+EV3Result::OK
+正常終了
+EV3Result::Error
+エラー',
+	0,
+	"6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	'return EV3Result::OK;
+',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("98ea3de4-05c5-4116-9da2-cb0bf92d4be8",
+	"c3de0887-f75d-465e-a11c-5b6a744ec81e",
+	'power',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'モーターのパワー。-100～100を指定。マイナスの値は逆方向の回転となる');
+INSERT INTO S_BPARM
+	VALUES ("7ec95d09-8cce-4bd2-a2ce-611f0ff9ecb7",
+	"c3de0887-f75d-465e-a11c-5b6a744ec81e",
+	'ratio',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"98ea3de4-05c5-4116-9da2-cb0bf92d4be8",
+	' 左右のモーター出力差。-100%～100%。マイナスが左方向。-20が指定された場合、左モーターがpowerの80%、右モーターがpowerの100%というようになる。
+ ただし、実際のモーターの配置にもよるので、確認する事');
+INSERT INTO S_BRG
+	VALUES ("88b19bee-a1f0-4fe2-88fe-2c0dd9892c28",
+	"ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("ae0bbc6b-8d68-4662-a206-b605a60ae98b",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'EV3ColorSensor',
+	'',
+	'EV3COL',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3ColorSensor',
+	0);
+INSERT INTO S_BRG
+	VALUES ("abbc643d-fc87-4a0a-83f1-2df574af80b2",
+	"68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'get_color',
+	'カラーセンサーでカラーを識別する
+返り値はEV3Color型で定義される色
+
+EV3Color::NONEは識別ができない、ポートに刺さっていないなどの場合に返る
+
+TagSensorConfigのMarkingによりカラーセンサーのポートの設定をしておくこと。',
+	0,
+	"41e0e3f5-6627-4bfc-b71c-f9640423da11",
+	'return EV3Color::RED;',
+	1,
+	'',
+	0);
+INSERT INTO S_DT_PROXY
+	VALUES ("41e0e3f5-6627-4bfc-b71c-f9640423da11",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3Color',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("780e9887-47fe-4d8f-b491-892d4753552c",
+	"68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'get_reflect',
+	'反射光の強さを測定する
+
+返り値
+integer 
+0～100
+
+TagSensorConfigのMarkingによりカラーセンサーのポートの設定をしておくこと。
+検出できない場合は0となる',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 30;
+',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("e1c5211b-0cea-42d1-b85e-c0680c91df34",
+	"68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'get_ambient',
+	'環境光の強さを測定する
+
+返り値
+integer
+0～100
+
+TagSensorConfigのMarkingによりカラーセンサーのポートの設定をしておくこと。
+検出できない場合は0となる',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 30;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("b848e5d8-e778-4d38-8a84-ba8dec32fd7e",
+	"68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("e1ee6ce7-cdf2-41d2-bf5b-daff40f13a50",
+	"68e736d8-58af-48d6-b6b8-6609b53321ca",
+	'get_rgb_raw',
+	'RGBのRaw値を返す
+r_r/r_g/r_bはアウトプットであり、取得された数字が返ってくることに注意。
+
+r=0;
+g=0;
+b=0;
+
+EV3COL::get_rgb_raw(r_r:r,r_g:g,r_b:b);
+
+のように使う。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'param.r_r = 10;
+param.r_g = 20;
+param.r_b = 30;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("b1663643-abaf-4ce2-8b92-8f1763cb923c",
+	"e1ee6ce7-cdf2-41d2-bf5b-daff40f13a50",
+	'r_r',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("680ac1c5-0d95-4aca-a49b-f049d4951aa9",
+	"e1ee6ce7-cdf2-41d2-bf5b-daff40f13a50",
+	'r_g',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"b1663643-abaf-4ce2-8b92-8f1763cb923c",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("a5299c73-b946-4da0-958f-e6a99e80ffe8",
+	"e1ee6ce7-cdf2-41d2-bf5b-daff40f13a50",
+	'r_b',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"680ac1c5-0d95-4aca-a49b-f049d4951aa9",
+	'');
+INSERT INTO PE_PE
+	VALUES ("68e736d8-58af-48d6-b6b8-6609b53321ca",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("72528202-fabd-4d4e-a622-8cf122501674",
+	'EV3GyroSensor',
+	'',
+	'EV3GYR',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3GyroSensor',
+	0);
+INSERT INTO S_BRG
+	VALUES ("2a9e994d-9365-47f2-b7c0-dc2540025889",
+	"72528202-fabd-4d4e-a622-8cf122501674",
+	'get_angle',
+	'ジャイロセンサの角位置を測定する
+
+返り値
+integer
+ 角位置（度）',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 50;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("b787bfb6-7bac-4e9c-9824-1b4ee717249a",
+	"72528202-fabd-4d4e-a622-8cf122501674",
+	'get_rate',
+	'ジャイロセンサの角速度を測定する
+
+返り値
+integer
+ 角速度（度/秒）',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 40;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("70527070-261c-4b5f-8298-e1ffe9ef8c8e",
+	"72528202-fabd-4d4e-a622-8cf122501674",
+	'reset',
+	'ジャイロセンサの角位置をリセットする
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("ee296a9c-24bc-4b37-beab-a1df81259226",
+	"72528202-fabd-4d4e-a622-8cf122501674",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("72528202-fabd-4d4e-a622-8cf122501674",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("6be087bd-cd96-46a3-8cc3-cf56d28b3a96",
+	'EV3UltrasonicSensor',
+	'',
+	'EV3ULS',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3UltrasonicSensor',
+	0);
+INSERT INTO S_BRG
+	VALUES ("6a6cb637-1ea9-43a1-8e2b-037ff02e699b",
+	"6be087bd-cd96-46a3-8cc3-cf56d28b3a96",
+	'get_distance',
+	'超音波センサで距離を測定する
+
+返り値
+integer
+ 距離（cm)',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'return 50;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("c02aaa6a-a300-49a4-a7e2-55a012e81b29",
+	"6be087bd-cd96-46a3-8cc3-cf56d28b3a96",
+	'is_detected',
+	'超音波センサで超音波信号を検出する
+
+返り値
+boolean
+boolean
+  true: 超音波信号を検出した
+　false:超音波信号を検出しなかった',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'return true;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("a15232c9-90e9-42db-a879-27594d463646",
+	"6be087bd-cd96-46a3-8cc3-cf56d28b3a96",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("6be087bd-cd96-46a3-8cc3-cf56d28b3a96",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("c688a640-5fa2-4e29-a215-c67b9338c433",
+	'EV3TouchSensor',
+	'',
+	'EV3TCH',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3TouchSensor',
+	0);
+INSERT INTO S_BRG
+	VALUES ("1f2bc0c7-e125-486c-9f6f-dfda5c0ea691",
+	"c688a640-5fa2-4e29-a215-c67b9338c433",
+	'is_pressed',
+	'タッチセンサの状態を検出する
+
+返り値
+boolean
+  true: 検出した
+　false:検出しなかった
+',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'return true;',
+	1,
+	'',
+	0);
+INSERT INTO S_BRG
+	VALUES ("dda603f6-3354-43b2-8e66-67d5c5ea38b6",
+	"c688a640-5fa2-4e29-a215-c67b9338c433",
+	'Initialize',
+	'初期化関数。自動的に呼ばれるので、ユーザが呼ぶ必要はない。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("c688a640-5fa2-4e29-a215-c67b9338c433",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("b12b8a53-1e3e-465b-a6fe-b4b40b68d6ad",
+	'EV3Balancer',
+	'',
+	'EV3BAL',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3Balancer',
+	0);
+INSERT INTO S_BRG
+	VALUES ("0447800b-0e90-40e0-9f78-3193bcd057a5",
+	"b12b8a53-1e3e-465b-a6fe-b4b40b68d6ad",
+	'init',
+	'バランサーの初期化を行う。倒立前に一度呼び出すこと。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("226bb609-0676-4391-88d3-e5277b6a9b53",
+	"0447800b-0e90-40e0-9f78-3193bcd057a5",
+	'gyro_offset',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'ジャイロのoffset値');
+INSERT INTO S_BRG
+	VALUES ("d400aa47-4360-453e-9592-1f4a757f96ca",
+	"b12b8a53-1e3e-465b-a6fe-b4b40b68d6ad",
+	'run',
+	'バランスを取って走行する。4msec周期で呼び出すこと。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("56f6633f-d1f4-4449-831c-ce5a9b7a6311",
+	"d400aa47-4360-453e-9592-1f4a757f96ca",
+	'power',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'前進に与えるパワー。ただし、実際はバランスを取るため、この速度がそのまま適用されるわけではない
+-100～100が指定できる');
+INSERT INTO S_BPARM
+	VALUES ("d3cd32b9-7e32-417d-874f-0512178ae928",
+	"d400aa47-4360-453e-9592-1f4a757f96ca",
+	'turn',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"56f6633f-d1f4-4449-831c-ce5a9b7a6311",
+	'曲がる方向
+-100～100が指定可能。
+マイナスは左方向をしめす。');
+INSERT INTO PE_PE
+	VALUES ("b12b8a53-1e3e-465b-a6fe-b4b40b68d6ad",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO PE_PE
+	VALUES ("bf23e41b-141d-42e7-955b-dfe032de576f",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("f0f2e51c-0dd6-48e9-8bde-ae1acca1380a",
+	'MCLMShared',
+	1,
+	'../MCLMShared.xtuml');
