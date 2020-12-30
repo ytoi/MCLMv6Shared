@@ -854,7 +854,7 @@ TagSensorConfigのMarkingによりカラーセンサーのポートの設定を�
 検出できない場合は0となる',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
-	'return 30;
+	'return 40;
 ',
 	1,
 	'',
@@ -1175,6 +1175,182 @@ INSERT INTO S_BPARM
 マイナスは左方向をしめす。');
 INSERT INTO PE_PE
 	VALUES ("b12b8a53-1e3e-465b-a6fe-b4b40b68d6ad",
+	1,
+	"bf23e41b-141d-42e7-955b-dfe032de576f",
+	"00000000-0000-0000-0000-000000000000",
+	5);
+INSERT INTO S_EE
+	VALUES ("238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'EV3RawSensors',
+	'RawセンサーBridge
+
+複数のセンサーを使いたい場合に使用する。
+これを使う場合にはMarkingでのセンサー指定を使わないこと。
+
+ポート指定は1-4でそれぞれPORT_1 - PORT_4に対応する
+
+',
+	'EV3R',
+	"00000000-0000-0000-0000-000000000000",
+	'',
+	'EV3RawSensors',
+	1);
+INSERT INTO S_BRG
+	VALUES ("b0132fe6-5a63-4bed-a88d-06a179d23a5f",
+	"238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'init_sensor',
+	'',
+	0,
+	"6ee47c5a-2b94-4598-85d2-dd62356c252b",
+	'',
+	3,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("92163c0c-ea33-41e6-984e-36bdd30b1064",
+	"b0132fe6-5a63-4bed-a88d-06a179d23a5f",
+	'port',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("51da2557-5c9d-4eac-8efc-69972a426add",
+	"b0132fe6-5a63-4bed-a88d-06a179d23a5f",
+	'type',
+	"34aafdf9-1b74-465a-a2d3-dafaf0835764",
+	0,
+	'',
+	"92163c0c-ea33-41e6-984e-36bdd30b1064",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("34aafdf9-1b74-465a-a2d3-dafaf0835764",
+	"00000000-0000-0000-0000-000000000000",
+	'EV3SensorType',
+	'',
+	'',
+	'../Datatypes/Datatypes.xtuml');
+INSERT INTO S_BRG
+	VALUES ("3915343e-a6e9-416e-8079-66f9eab1da02",
+	"238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'color_get_color',
+	'',
+	0,
+	"41e0e3f5-6627-4bfc-b71c-f9640423da11",
+	'',
+	3,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("8b9b5aa0-f2b3-4d86-8731-b8aaf41a550c",
+	"3915343e-a6e9-416e-8079-66f9eab1da02",
+	'port',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BRG
+	VALUES ("8ab2fdaa-60fa-4676-8d88-d6c867fd56b4",
+	"238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'color_get_reflect',
+	'',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	3,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("58cd7b63-4de9-484f-b140-6b50f9ca200b",
+	"8ab2fdaa-60fa-4676-8d88-d6c867fd56b4",
+	'port',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BRG
+	VALUES ("857e9487-8129-49da-b808-0234dd4b0610",
+	"238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'color_get_rgb_raw',
+	'RGBのRaw値を返す
+r_r/r_g/r_bはアウトプットであり、取得された数字が返ってくることに注意。
+
+r=0;
+g=0;
+b=0;
+
+EV3COL::get_rgb_raw(r_r:r,r_g:g,r_b:b);
+
+のように使う。',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'param.r_r = 10;
+param.r_g = 20;
+param.r_b = 30;',
+	1,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("f3c2528c-b5b0-44cd-b7f7-071e324afa40",
+	"857e9487-8129-49da-b808-0234dd4b0610",
+	'r_r',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"6bd41d92-fdcf-48f5-ba11-665b6d52e062",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("99cc77f6-be4b-48e9-944a-c687f010cccd",
+	"857e9487-8129-49da-b808-0234dd4b0610",
+	'r_g',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"f3c2528c-b5b0-44cd-b7f7-071e324afa40",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("9d2a181a-b015-4e52-a6b2-cc5a5a58325a",
+	"857e9487-8129-49da-b808-0234dd4b0610",
+	'r_b',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'',
+	"99cc77f6-be4b-48e9-944a-c687f010cccd",
+	'');
+INSERT INTO S_BPARM
+	VALUES ("6bd41d92-fdcf-48f5-ba11-665b6d52e062",
+	"857e9487-8129-49da-b808-0234dd4b0610",
+	'port',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_BRG
+	VALUES ("5c87f3a9-4aee-417c-90d4-cb1402c1c781",
+	"238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
+	'touch_is_pressed',
+	'',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	3,
+	'',
+	0);
+INSERT INTO S_BPARM
+	VALUES ("9142c329-05b9-4fd9-9f5e-9958b54bccfc",
+	"5c87f3a9-4aee-417c-90d4-cb1402c1c781",
+	'port',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("238db04a-a7a2-4b0c-ab5e-9e1157deaf38",
 	1,
 	"bf23e41b-141d-42e7-955b-dfe032de576f",
 	"00000000-0000-0000-0000-000000000000",
